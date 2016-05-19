@@ -24,7 +24,7 @@ const int leftTape = 6;
 const int rightTape = 7;
 const int leftServoPin = 5;
 const int rightServoPin = 3;
-const int TURN_TIME = 20;
+const int TURN_TIME = 25;
 
 
 // MARK: - Variables
@@ -111,7 +111,6 @@ void TwoSensorLineFollow(){
     
     // in or leaving, sTurning
   } else if (IsTimerExpired(LineCorrectionTimer)){ // timer expired, or not init'd
-    forward();
     if(tapeSet == tLeft){
       lineFollowState = 1;
       
