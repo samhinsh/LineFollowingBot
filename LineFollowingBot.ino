@@ -49,8 +49,6 @@ void loop() {
   
   // Read line sensor values, characterize the tapeSet
   ReadTapeSensors();
-  Serial.print("Tape reading: ");
-  Serial.println(tapeSet);
   
   // Line follow
   TwoSensorLineFollow();
@@ -100,7 +98,6 @@ void ReadTapeSensors(){
 // Line follow using two sensors. Initial state expected to be centered on line
 void TwoSensorLineFollow(){
   static int lineFollowState = 0; // 0 - movingForward, 1 - sTurning
-  forward();
   
   if (lineFollowState == 0){ // in, or leaving MovingForward
     if(tapeSet == tLeft || tapeSet == tRight){ // line found
