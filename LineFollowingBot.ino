@@ -24,7 +24,7 @@ const int leftTape = 6;
 const int rightTape = 7;
 const int leftServoPin = 5;
 const int rightServoPin = 3;
-const int TURN_TIME = 20;
+const int TURN_TIME = 1;
 
 
 // MARK: - Variables
@@ -69,11 +69,11 @@ void reverse() {
 
 void right() {
   leftWheel.write(180);
-  rightWheel.write(180);
+  rightWheel.write(95);
 }
 
 void left() {
-  leftWheel.write(0);
+  leftWheel.write(95);
   rightWheel.write(0);
 }
 
@@ -108,7 +108,7 @@ void TwoSensorLineFollow(){
     
     // in or leaving, sTurning
   } else if (IsTimerExpired(LineCorrectionTimer)){ // timer expired, or not init'd
-    forward();
+    // forward();
     if(tapeSet == tLeft){
       lineFollowState = 1;
       
